@@ -1,0 +1,53 @@
+{
+  "name": "@yikoyu/commitlint-config",
+  "type": "module",
+  "version": "0.1.0",
+  "private": false,
+  "packageManager": "pnpm@8.15.8",
+  "description": "yikoyu's commitlint config",
+  "author": "yikoyu<2282373181@qq.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yikoyu/unconfig/packages/commitlint-config"
+  },
+  "keywords": [
+    "config",
+    "commitlint",
+    "conventionalcommits"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "README.md",
+    "dist",
+    "package.json"
+  ],
+  "scripts": {
+    "dev": "tsup --config ../../tsup.config.ts --watch",
+    "build": "tsup --minify --clean --dts --config ../../tsup.config.ts"
+  },
+  "peerDependencies": {
+    "commitizen": "^4.3.0"
+  },
+  "peerDependenciesMeta": {
+    "commitizen": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@commitlint/cz-commitlint": "^19.2.0",
+    "@commitlint/types": "^19.0.3"
+  },
+  "devDependencies": {
+    "commitizen": "^4.3.0"
+  }
+}

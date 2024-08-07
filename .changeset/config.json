@@ -1,0 +1,13 @@
+{
+  "changelog": [
+    "@changesets/changelog-github",
+    { "repo": "yikoyu/unconfig" }
+  ],
+  "commit": false,
+  "fixed": [],
+  "linked": [],
+  "access": "public",
+  "baseBranch": "master",
+  "updateInternalDependencies": "patch",
+  "ignore": []
+}

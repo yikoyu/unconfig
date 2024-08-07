@@ -1,0 +1,51 @@
+{
+  "name": "@yikoyu/semantic-release-config",
+  "type": "module",
+  "version": "0.1.0",
+  "private": false,
+  "packageManager": "pnpm@8.15.8",
+  "description": "yikoyu's semantic-release config",
+  "author": "yikoyu<2282373181@qq.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yikoyu/unconfig/packages/semantic-release-config"
+  },
+  "keywords": [
+    "config",
+    "semantic-release",
+    "changelog"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "README.md",
+    "dist",
+    "package.json"
+  ],
+  "scripts": {
+    "dev": "tsup --config ../../tsup.config.ts --watch",
+    "build": "tsup --minify --clean --dts --config ../../tsup.config.ts"
+  },
+  "peerDependencies": {
+    "semantic-release": "^24.0.0"
+  },
+  "dependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^10.1.0",
+    "@semantic-release/npm": "^12.0.1",
+    "@semantic-release/release-notes-generator": "^14.0.1",
+    "conventional-changelog-conventionalcommits": "^8.0.0"
+  },
+  "devDependencies": {
+    "semantic-release": "^24.0.0"
+  }
+}
