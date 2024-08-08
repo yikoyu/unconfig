@@ -17,18 +17,18 @@
 [![node.js version support badge]][node.js]
 [![supported stylelint version badge]][stylelint]
 
-[node.js version support badge]: https://img.shields.io/node/v-lts/@yikoyu/stylelint-config?style=for-the-badge&logo=nodedotjs
+[node.js version support badge]: https://img.shields.io/node/v-lts/stylelint?style=for-the-badge&logo=nodedotjs
 [supported stylelint version badge]: https://img.shields.io/github/package-json/dependency-version/yikoyu/unconfig/peer/stylelint?filename=packages%2Fstylelint-config%2Fpackage.json&logo=stylelint&style=for-the-badge
 
 ℹ️ This configuration package require these tools to use locally on your
 device(s):
 
 1. ![node.js icon] Latest [Node.js] LTS _(Long-Term Support)_ version
-1. One of Node.js package managers:
+2. One of Node.js package managers:
     - ![pnpm icon] [pnpm]
     - ![yarn icon] [yarn]
     - ![npm icon] [npm]
-1. Latest ![stylelint icon] [Stylelint] version
+3. Latest ![stylelint icon] [Stylelint] version
 
 [node.js]: https://nodejs.org/en/
 [node.js icon]: https://api.iconify.design/logos/nodejs-icon.svg

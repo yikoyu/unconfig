@@ -17,18 +17,18 @@
 [![node.js version support badge]][node.js]
 [![supported semantic-release version badge]][semantic-release]
 
-[node.js version support badge]: https://img.shields.io/node/v-lts/@yikoyu/semantic-release-config?style=for-the-badge&logo=nodedotjs
+[node.js version support badge]: https://img.shields.io/node/v-lts/semantic-release?style=for-the-badge&logo=nodedotjs
 [supported semantic-release version badge]: https://img.shields.io/github/package-json/dependency-version/yikoyu/unconfig/peer/semantic-release?filename=packages%2Fsemantic-release-config%2Fpackage.json&logo=semantic-release&style=for-the-badge
 
 ℹ️ This configuration package require these tools to use locally on your
 device(s):
 
 1. ![node.js icon] Latest [Node.js] LTS _(Long-Term Support)_ version
-1. One of Node.js package managers:
+2. One of Node.js package managers:
     - ![pnpm icon] [pnpm]
     - ![yarn icon] [yarn]
     - ![npm icon] [npm]
-1. Latest ![semantic-release icon] [semantic-release] version
+3. Latest ![semantic-release icon] [semantic-release] version
 
 [node.js]: https://nodejs.org/en/
 [node.js icon]: https://api.iconify.design/logos/nodejs-icon.svg

@@ -30,11 +30,9 @@ plugins dependencies, etc.
 ## Packages
 
 ![workflow CI-CD badge]
-![node.js version support badge]
 [![Dependencies badge]][dependencies url]
 
 [workflow ci-cd badge]: https://img.shields.io/github/actions/workflow/status/yikoyu/unconfig/release.yml?label=CI%20%26%20CD&logo=github&style=for-the-badge&branch=master
-[node.js version support badge]: https://img.shields.io/node/v-lts/@yikoyu/stylelint-config?style=for-the-badge&logo=nodedotjs
 [dependencies badge]: https://img.shields.io/librariesio/github/yikoyu/unconfig?style=for-the-badge
 [dependencies url]: https://libraries.io/github/yikoyu/unconfig "Dependencies status"
 

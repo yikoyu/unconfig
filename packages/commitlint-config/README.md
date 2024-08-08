@@ -17,7 +17,7 @@
 [![node.js version support badge]][node.js]
 [![supported commitlint version badge]][commitlint]
 
-[node.js version support badge]: https://img.shields.io/node/v-lts/@yikoyu/commitlint-config?style=for-the-badge&logo=nodedotjs
+[node.js version support badge]: https://img.shields.io/node/v-lts/@commitlint/cli?style=for-the-badge&logo=nodedotjs
 [supported commitlint version badge]: https://img.shields.io/github/package-json/dependency-version/yikoyu/unconfig/@commitlint/cli?filename=packages%2Fcommitlint-config%2Fpackage.json&logo=commitlint&style=for-the-badge
 
 ℹ️ This configuration package require these tools to use locally on your
