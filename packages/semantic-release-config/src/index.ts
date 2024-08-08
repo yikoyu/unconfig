@@ -31,22 +31,22 @@ export function yikoyu(userConfig: Partial<OptionsConfig> = {}): Options {
 
   const plugins: PluginSpec[] = []
 
-  if (pluginCommitAnalyzer)
+  if (commitAnalyzer && pluginCommitAnalyzer)
     plugins.push(pluginCommitAnalyzer)
 
-  if (pluginReleaseNotesGenerator)
+  if (releaseNotesGenerator && pluginReleaseNotesGenerator)
     plugins.push(pluginReleaseNotesGenerator)
 
-  if (pluginChangelog)
+  if (changelog && pluginChangelog)
     plugins.push(pluginChangelog)
 
-  if (pluginGithub)
+  if (github && pluginGithub)
     plugins.push(pluginGithub)
 
-  if (pluginGit)
+  if (git && pluginGit)
     plugins.push(pluginGit)
 
-  if (pluginNpm)
+  if (npm && pluginNpm)
     plugins.push(pluginNpm)
 
   const configs: Options = {
