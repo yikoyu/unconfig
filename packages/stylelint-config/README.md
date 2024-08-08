@@ -116,7 +116,7 @@ options _conditionally_.
 the [yikoyu/unconfig] monorepo.
 
 [license badge]: https://img.shields.io/github/license/yikoyu/unconfig?style=for-the-badge
-[license]: https://github.com/yikoyu/unconfig/blob/main/LICENSE.md
+[license]: ../../LICENSE
 [license section]: https://github.com/yikoyu/unconfig#License
 
 ---

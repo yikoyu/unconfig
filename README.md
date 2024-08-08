@@ -70,6 +70,9 @@ registry].
 [stylelint-config version badge]: https://img.shields.io/npm/v/@yikoyu/stylelint-config/latest?style=flat-square&logo=npm
 [stylelint-config npm page]: https://www.npmjs.com/package/@yikoyu/stylelint-config
 
-## 📄 License
+## License
 
-[MIT](./LICENSE)
+[![license badge]][license]
+
+[license badge]: https://img.shields.io/github/license/yikoyu/unconfig?style=for-the-badge
+[license]: ./LICENSE

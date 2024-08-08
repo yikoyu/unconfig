@@ -18,17 +18,17 @@
 [![supported commitlint version badge]][commitlint]
 
 [node.js version support badge]: https://img.shields.io/node/v-lts/@yikoyu/commitlint-config?style=for-the-badge&logo=nodedotjs
-[supported commitlint version badge]: https://img.shields.io/github/package-json/dependency-version/yikoyu/unconfig/peer/commitlint?filename=packages%2Fcommitlint-config%2Fpackage.json&logo=commitlint&style=for-the-badge
+[supported commitlint version badge]: https://img.shields.io/github/package-json/dependency-version/yikoyu/unconfig/@commitlint/cli?filename=packages%2Fcommitlint-config%2Fpackage.json&logo=commitlint&style=for-the-badge
 
 ℹ️ This configuration package require these tools to use locally on your
 device(s):
 
 1. ![node.js icon] Latest [Node.js] LTS _(Long-Term Support)_ version
-1. One of Node.js package managers:
+2. One of Node.js package managers:
     - ![pnpm icon] [pnpm]
     - ![yarn icon] [yarn]
     - ![npm icon] [npm]
-1. Latest ![commitlint icon] [commitlint] version
+3. Latest ![commitlint icon] [commitlint] version
 
 [node.js]: https://nodejs.org/en/
 [node.js icon]: https://api.iconify.design/logos/nodejs-icon.svg
@@ -129,5 +129,5 @@ options _conditionally_.
 the [yikoyu/unconfig] monorepo.
 
 [license badge]: https://img.shields.io/github/license/yikoyu/unconfig?style=for-the-badge
-[license]: https://github.com/yikoyu/unconfig/blob/main/LICENSE.md
+[license]: ../../LICENSE
 [license section]: https://github.com/yikoyu/unconfig#License
