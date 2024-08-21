@@ -49,7 +49,7 @@ device(s):
    choice** _(in our case, we use ![pnpm icon] [pnpm])_.
 
     ```sh
-     pnpm install --save-dev @yikoyu/commitlint-config commitizen
+     pnpm install --save-dev @yikoyu/commitlint-config cz-git czg
     ```
 
 2. **If using [pnpm], please add configuration to the `.npmrc` file.**
@@ -68,22 +68,10 @@ device(s):
     export default yikoyu()
     ```
 
-5. **Add commitizen configuration to the `package.json` file.**
-
-    ```json
-    {
-      "config": {
-        "commitizen": {
-          "path": "@commitlint/cz-commitlint"
-        }
-      }
-    }
-    ```
-
-6. **Git commit**
+5. **Git commit**
 
     ```sh
-    pnpm git-cz
+    pnpm czg
     ```
 
 📖 For the ![commitlint icon] [commitlint CLI] usage, please refer to its
@@ -106,20 +94,16 @@ options _conditionally_.
 
 ### Configurations
 
-| Configurations                      | Version                                           | Loading condition(s) |
-| ----------------------------------- | ------------------------------------------------- | -------------------- |
-| [@commitlint/cli]                   | ![@commitlint/cli version badge]                  | -                    |
-| [@commitlint/config-conventional]   | ![@commitlint/config-conventional version badge]  | -                    |
-| [@commitlint/cz-commitlint]         | ![@commitlint/cz-commitlint version badge]        | -                    |
+| Configurations                    | Version                                          | Loading condition(s) |
+| -------------------------------- | ------------------------------------------------ | -------------------- |
+| [@commitlint/cli]                | ![@commitlint/cli version badge]                 | -                    |
+| [@commitlint/config-conventional] | ![@commitlint/config-conventional version badge]  | -                    |
 
 [@commitlint/cli]: https://github.com/conventional-changelog/commitlint
 [@commitlint/cli version badge]: https://img.shields.io/npm/v/@commitlint/cli?logo=npm&style=flat-square
 
 [@commitlint/config-conventional]: https://github.com/conventional-changelog/commitlint
 [@commitlint/config-conventional version badge]: https://img.shields.io/npm/v/@commitlint/config-conventional?logo=npm&style=flat-square
-
-[@commitlint/cz-commitlint]: https://github.com/conventional-changelog/commitlint
-[@commitlint/cz-commitlint version badge]: https://img.shields.io/npm/v/@commitlint/cz-commitlint?logo=npm&style=flat-square
 
 ## License
 

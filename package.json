@@ -18,7 +18,7 @@
     "lint:fix": "eslint . --fix",
     "clean:cache": "rimraf -g **/{.turbo,dist}",
     "clean:all": "rimraf -g **/{.turbo,dist,node_modules} & pnpm install",
-    "git-commit": "git-cz",
+    "commit": "czg",
     "push": "pnpm publish --no-git-checks --registry https://registry.npmjs.org/ --access public",
     "version-packages": "pnpm changeset version",
     "prepare": "husky install"

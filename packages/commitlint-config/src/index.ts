@@ -1,61 +1,17 @@
-import type { UserConfig } from '@commitlint/types'
+import { execSync } from 'node:child_process'
+import type { UserConfig } from 'cz-git'
 
-/**
- * Enum representing different commit types with their descriptions, titles, and emojis.
- */
-const typeEnum = {
-  feat: {
-    description: 'A new feature',
-    title: 'Features',
-    emoji: '✨',
-  },
-  fix: {
-    description: 'A bug fix',
-    title: 'Bug Fixes',
-    emoji: '🐛',
-  },
-  docs: {
-    description: 'Documentation only changes',
-    title: 'Documentation',
-    emoji: '📚',
-  },
-  style: {
-    description:
-      'Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)',
-    title: 'Styles',
-    emoji: '💎',
-  },
-  refactor: {
-    description: 'A code change that neither fixes a bug nor adds a feature',
-    title: 'Code Refactoring',
-    emoji: '📦',
-  },
-  perf: {
-    description: 'A code change that improves performance',
-    title: 'Performance Improvements',
-    emoji: '🚀',
-  },
-  test: {
-    description: 'Adding missing tests or correcting existing tests',
-    title: 'Tests',
-    emoji: '🚨',
-  },
-  revert: {
-    description: 'Reverts a previous commit',
-    title: 'Reverts',
-    emoji: '🗑',
-  },
-  config: {
-    description: 'Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)',
-    title: 'Configs',
-    emoji: '🔨',
-  },
-  chore: {
-    description: 'Other changes that don\'t modify src or test files',
-    title: 'Chores',
-    emoji: '♻️',
-  },
-} as const
+import { messages, typeList } from './configs'
+
+const gitStatus = execSync('git status --porcelain || true')
+  .toString()
+  .trim()
+  .split('\n')
+
+const scopeComplete = gitStatus
+  .find(r => ~r.indexOf('M  packages'))
+  ?.replace(/\//g, '%%')
+  ?.match(/packages%%((\w|-)*)/)?.[1]
 
 /**
  * Generates a commitlint configuration object with conventional commit rules.
@@ -67,15 +23,35 @@ export function yikoyu(userConfig: Partial<UserConfig> = {}): UserConfig {
     ignores: [(commit: string) => commit.includes('init')],
     extends: ['@commitlint/config-conventional'],
     rules: {
-      'type-enum': [2, 'always', Object.keys(typeEnum)],
+      'type-enum': [2, 'always', typeList.map(k => k.value)],
     },
     prompt: {
-      questions: {
-        type: {
-          description: 'Select the type of change that you\'re committing',
-          enum: typeEnum,
-        },
+      /** @use `pnpm commit :f` */
+      alias: {
+        f: 'docs: fix typos',
+        r: 'docs: update README',
+        s: 'style: update code format',
+        b: 'build: bump dependencies',
+        c: 'chore: update config',
       },
+      messages,
+      types: typeList,
+      /** 是否开启 commit message 带有 Emoji 字符 */
+      useEmoji: true,
+      /** 设置 Emoji 字符 的 位于头部位置 */
+      emojiAlign: 'center',
+      /** 设置 选择范围 中 为空选项(empty) 和 自定义选项(custom) 的 位置 */
+      customScopesAlign: !scopeComplete ? 'top' : 'bottom',
+      /** 如果 defaultScope 与 scopes 选择范围列表项中的 value 相匹配就会进行星标置顶操作 */
+      defaultScope: scopeComplete,
+      /** 自定义选择issue前缀 */
+      issuePrefixs: [
+        { value: 'link', name: 'link:     链接 ISSUES 进行中 | ISSUES has been processed' },
+        { value: 'closed', name: 'closed:   标记 ISSUES 已完成 | ISSUES has been completed' },
+      ],
+
+      // defaultSubject: subjectComplete && `[${subjectComplete}] `,
+      // scopes: [...scopes, 'mock'],
     },
   }
 
