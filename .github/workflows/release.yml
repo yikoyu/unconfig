@@ -34,8 +34,8 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
-          commit: 'chore(release): release package(s)'
-          title: 'chore(release): release package(s)'
+          commit: 'chore(release): :rocket: release package(s)'
+          title: 'chore(release): :rocket: release package(s)'
           version: pnpm changeset version
           publish: pnpm changeset publish
         env:
