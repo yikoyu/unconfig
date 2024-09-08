@@ -9,7 +9,8 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yikoyu/unconfig/packages/semantic-release-config"
+    "url": "https://github.com/yikoyu/unconfig",
+    "directory": "/packages/semantic-release-config"
   },
   "keywords": [
     "config",
