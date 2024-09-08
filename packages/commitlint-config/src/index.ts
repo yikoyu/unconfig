@@ -28,11 +28,11 @@ export function yikoyu(userConfig: Partial<UserConfig> = {}): UserConfig {
     prompt: {
       /** @use `pnpm commit :f` */
       alias: {
-        f: 'docs: fix typos',
-        r: 'docs: update README',
-        s: 'style: update code format',
-        b: 'build: bump dependencies',
-        c: 'chore: update config',
+        f: 'docs: :memo: fix typos',
+        r: 'docs: :memo: update README',
+        s: 'style: :lipstick: update code format',
+        b: 'build: :package: bump dependencies',
+        c: 'chore: :rewind: update config',
       },
       messages,
       types: typeList,
