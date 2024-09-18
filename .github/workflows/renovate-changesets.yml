@@ -1,9 +1,6 @@
 name: Add changeset to Renovate updates
 
 on:
-  push:
-    branches:
-      - master
   pull_request_target:
     types: [opened, synchronize, labeled]
     paths:
@@ -19,7 +16,7 @@ jobs:
       matrix:
         os: [ubuntu-latest]
 
-    # if: github.actor == 'renovate[bot]'
+    if: github.actor == 'renovate[bot]'
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@v2
@@ -35,8 +32,8 @@ jobs:
 
       - name: Configure Git
         run: |
-          git config --global user.email 'Renovate Changesets'
-          git config --global user.name 'github+renovate@scharley.me'
+          git config --global user.email 'renovate[bot]@users.noreply.github.com'
+          git config --global user.name 'renovate[bot]'
 
       - name: Generate changeset
         uses: actions/github-script@v7
