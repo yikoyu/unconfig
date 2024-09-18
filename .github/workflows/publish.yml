@@ -21,6 +21,9 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
+      - name: Build Config
+        run: pnpm build:all
+
       - name: Npm publish
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}

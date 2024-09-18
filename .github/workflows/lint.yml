@@ -25,5 +25,8 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
+      - name: Build Config
+        run: pnpm build:all
+
       - name: Lint
         run: pnpm lint
