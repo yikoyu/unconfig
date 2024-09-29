@@ -35,7 +35,7 @@
     "@yikoyu/commitlint-config": "workspace:*",
     "@yikoyu/semantic-release-config": "workspace:^",
     "eslint": "^9.8.0",
-    "esno": "^4.7.0",
+    "esno": "^4.8.0",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "rimraf": "^6.0.1",
