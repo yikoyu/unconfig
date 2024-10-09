@@ -1,5 +1,6 @@
 import type { Options, PluginSpec } from 'semantic-release'
 
+import type { OptionsConfig } from './types'
 import {
   configChangelog,
   configCommitAnalyzer,
@@ -8,7 +9,6 @@ import {
   configNpm,
   configReleaseNotesGenerator,
 } from './configs'
-import type { OptionsConfig } from './types'
 import { createPlugin } from './utils'
 
 export function yikoyu(userConfig: Partial<OptionsConfig> = {}): Options {

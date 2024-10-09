@@ -1,5 +1,5 @@
-import { execSync } from 'node:child_process'
 import type { UserConfig } from 'cz-git'
+import { execSync } from 'node:child_process'
 
 import { messages, typeList } from './configs'
 
