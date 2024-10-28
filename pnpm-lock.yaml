@@ -82,8 +82,8 @@ importers:
         specifier: ^10.0.1
         version: 10.0.1(semantic-release@24.2.0)
       '@semantic-release/github':
-        specifier: ^10.3.5
-        version: 10.3.5(semantic-release@24.2.0)
+        specifier: ^11.0.0
+        version: 11.0.0(semantic-release@24.2.0)
       '@semantic-release/npm':
         specifier: ^12.0.1
         version: 12.0.1(semantic-release@24.2.0)
@@ -1867,33 +1867,6 @@ packages:
       micromatch: 4.0.7
       p-reduce: 2.1.0
       semantic-release: 24.2.0(typescript@5.6.3)
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
-  /@semantic-release/github@10.3.5(semantic-release@24.2.0):
-    resolution: {integrity: sha512-svvRglGmvqvxjmDgkXhrjf0lC88oZowFhOfifTldbgX9Dzj0inEtMLaC+3/MkDEmxmaQjWmF5Q/0CMIvPNSVdQ==}
-    engines: {node: '>=20.8.1'}
-    peerDependencies:
-      semantic-release: '>=20.1.0'
-    dependencies:
-      '@octokit/core': 6.1.2
-      '@octokit/plugin-paginate-rest': 11.3.3(@octokit/core@6.1.2)
-      '@octokit/plugin-retry': 7.1.1(@octokit/core@6.1.2)
-      '@octokit/plugin-throttling': 9.3.1(@octokit/core@6.1.2)
-      '@semantic-release/error': 4.0.0
-      aggregate-error: 5.0.0
-      debug: 4.3.7
-      dir-glob: 3.0.1
-      globby: 14.0.0
-      http-proxy-agent: 7.0.0
-      https-proxy-agent: 7.0.0
-      issue-parser: 7.0.1
-      lodash-es: 4.17.21
-      mime: 4.0.1
-      p-filter: 4.1.0
-      semantic-release: 24.2.0(typescript@5.6.3)
-      url-join: 5.0.0
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -4087,7 +4060,7 @@ packages:
     dependencies:
       '@sindresorhus/merge-streams': 1.0.0
       fast-glob: 3.3.2
-      ignore: 5.3.1
+      ignore: 5.3.2
       path-type: 5.0.0
       slash: 5.1.0
       unicorn-magic: 0.1.0
@@ -4214,10 +4187,6 @@ packages:
     dependencies:
       safer-buffer: 2.1.2
     dev: true
-
-  /ignore@5.3.1:
-    resolution: {integrity: sha512-5Fytz/IraMjqpwfd34ke28PTVMjZjJG2MPn5t7OE4eUCUNf8BAa7b5WUS9/Qvr6mwOQS7Mk6vdsMno5he+T8Xw==}
-    engines: {node: '>= 4'}
 
   /ignore@5.3.2:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
