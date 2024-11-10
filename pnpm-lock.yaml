@@ -10,7 +10,7 @@ importers:
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^3.8.0
-        version: 3.8.0(@typescript-eslint/utils@8.8.0)(@vue/compiler-sfc@3.4.31)(eslint@9.14.0)(typescript@5.6.3)
+        version: 3.8.0(@typescript-eslint/utils@8.12.2)(@vue/compiler-sfc@3.4.31)(eslint@9.14.0)(typescript@5.6.3)
       '@changesets/changelog-github':
         specifier: ^0.5.0
         version: 0.5.0
@@ -82,8 +82,8 @@ importers:
         specifier: ^10.0.1
         version: 10.0.1(semantic-release@24.2.0)
       '@semantic-release/github':
-        specifier: ^11.0.0
-        version: 11.0.0(semantic-release@24.2.0)
+        specifier: ^11.0.1
+        version: 11.0.1(semantic-release@24.2.0)
       '@semantic-release/npm':
         specifier: ^12.0.1
         version: 12.0.1(semantic-release@24.2.0)
@@ -134,7 +134,7 @@ importers:
 
 packages:
 
-  /@antfu/eslint-config@3.8.0(@typescript-eslint/utils@8.8.0)(@vue/compiler-sfc@3.4.31)(eslint@9.14.0)(typescript@5.6.3):
+  /@antfu/eslint-config@3.8.0(@typescript-eslint/utils@8.12.2)(@vue/compiler-sfc@3.4.31)(eslint@9.14.0)(typescript@5.6.3):
     resolution: {integrity: sha512-O5QSufPHpKTm0wk1OQ5c2mOZVzCqYV3hIDrt5zt+cOWqiG8YXLPkSOD4fFwjomATtOuUbcLUwkcgY5dErM7aIw==}
     hasBin: true
     peerDependencies:
@@ -187,7 +187,7 @@ packages:
       '@stylistic/eslint-plugin': 2.9.0(eslint@9.14.0)(typescript@5.6.3)
       '@typescript-eslint/eslint-plugin': 8.12.2(@typescript-eslint/parser@8.12.2)(eslint@9.14.0)(typescript@5.6.3)
       '@typescript-eslint/parser': 8.12.2(eslint@9.14.0)(typescript@5.6.3)
-      '@vitest/eslint-plugin': 1.1.7(@typescript-eslint/utils@8.8.0)(eslint@9.14.0)(typescript@5.6.3)
+      '@vitest/eslint-plugin': 1.1.7(@typescript-eslint/utils@8.12.2)(eslint@9.14.0)(typescript@5.6.3)
       eslint: 9.14.0
       eslint-config-flat-gitignore: 0.3.0(eslint@9.14.0)
       eslint-flat-config-utils: 0.4.0
@@ -1683,8 +1683,8 @@ packages:
       - supports-color
     dev: false
 
-  /@semantic-release/github@11.0.0(semantic-release@24.2.0):
-    resolution: {integrity: sha512-Uon6G6gJD8U1JNvPm7X0j46yxNRJ8Ui6SgK4Zw5Ktu8RgjEft3BGn+l/RX1TTzhhO3/uUcKuqM+/9/ETFxWS/Q==}
+  /@semantic-release/github@11.0.1(semantic-release@24.2.0):
+    resolution: {integrity: sha512-Z9cr0LgU/zgucbT9cksH0/pX9zmVda9hkDPcgIE0uvjMQ8w/mElDivGjx1w1pEQ+MuQJ5CBq3VCF16S6G4VH3A==}
     engines: {node: '>=20.8.1'}
     peerDependencies:
       semantic-release: '>=24.1.0'
@@ -2020,7 +2020,7 @@ packages:
       eslint-visitor-keys: 3.4.3
     dev: true
 
-  /@vitest/eslint-plugin@1.1.7(@typescript-eslint/utils@8.8.0)(eslint@9.14.0)(typescript@5.6.3):
+  /@vitest/eslint-plugin@1.1.7(@typescript-eslint/utils@8.12.2)(eslint@9.14.0)(typescript@5.6.3):
     resolution: {integrity: sha512-pTWGW3y6lH2ukCuuffpan6kFxG6nIuoesbhMiQxskyQMRcCN5t9SXsKrNHvEw3p8wcCsgJoRqFZVkOTn6TjclA==}
     peerDependencies:
       '@typescript-eslint/utils': '>= 8.0'
@@ -2033,7 +2033,7 @@ packages:
       vitest:
         optional: true
     dependencies:
-      '@typescript-eslint/utils': 8.8.0(eslint@9.14.0)(typescript@5.6.3)
+      '@typescript-eslint/utils': 8.12.2(eslint@9.14.0)(typescript@5.6.3)
       eslint: 9.14.0
       typescript: 5.6.3
     dev: true
@@ -5756,7 +5756,7 @@ packages:
     dependencies:
       '@semantic-release/commit-analyzer': 13.0.0(semantic-release@24.2.0)
       '@semantic-release/error': 4.0.0
-      '@semantic-release/github': 11.0.0(semantic-release@24.2.0)
+      '@semantic-release/github': 11.0.1(semantic-release@24.2.0)
       '@semantic-release/npm': 12.0.1(semantic-release@24.2.0)
       '@semantic-release/release-notes-generator': 14.0.1(semantic-release@24.2.0)
       aggregate-error: 5.0.0
