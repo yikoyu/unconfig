@@ -1,5 +1,12 @@
 # @yikoyu/commitlint-config
 
+## 0.2.2
+
+### Patch Changes
+
+- [#37](https://github.com/yikoyu/unconfig/pull/37) [`78649bd`](https://github.com/yikoyu/unconfig/commit/78649bde344edbecb5d9d743ef8c2cf419e4e0d6) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `@commitlint/cli` to `^19.6.1`.
+  Updated dependency `@semantic-release/release-notes-generator` to `^14.0.2`.
+
 ## 0.2.1
 
 ### Patch Changes
