@@ -47,12 +47,12 @@
     }
   },
   "dependencies": {
-    "@commitlint/cli": "^19.6.0",
+    "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
     "@commitlint/types": "^19.5.0"
   },
   "devDependencies": {
-    "@types/node": "^22.9.3",
+    "@types/node": "^22.10.2",
     "cz-git": "^1.11.0",
     "czg": "^1.11.0"
   }
