@@ -1,5 +1,14 @@
 # @yikoyu/stylelint-config
 
+## 0.1.2
+
+### Patch Changes
+
+- [#40](https://github.com/yikoyu/unconfig/pull/40) [`7d0b02a`](https://github.com/yikoyu/unconfig/commit/7d0b02a60684c47cbf9f65385427e327e9b61c93) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `@semantic-release/commit-analyzer` to `^13.0.1`.
+  Updated dependency `@semantic-release/release-notes-generator` to `^14.0.3`.
+  Updated dependency `postcss-html` to `^1.8.0`.
+  Updated dependency `stylelint-config-recommended-vue` to `^1.6.0`.
+
 ## 0.1.1
 
 ### Patch Changes
