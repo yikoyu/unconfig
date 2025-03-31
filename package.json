@@ -34,7 +34,7 @@
     "@changesets/cli": "^2.28.1",
     "@yikoyu/commitlint-config": "workspace:*",
     "@yikoyu/semantic-release-config": "workspace:^",
-    "eslint": "^9.21.0",
+    "eslint": "^9.23.0",
     "esno": "^4.8.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0",
