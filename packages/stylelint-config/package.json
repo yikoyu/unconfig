@@ -40,8 +40,8 @@
     "package.json"
   ],
   "scripts": {
-    "dev": "tsup --config ../../tsup.config.ts --watch",
-    "build": "tsup --minify --clean --dts --config ../../tsup.config.ts"
+    "dev": "tsdown --config ../../tsdown.config.ts --watch",
+    "build": "tsdown --minify --clean --dts --config ../../tsdown.config.ts"
   },
   "peerDependencies": {
     "stylelint": "^16.0.0"

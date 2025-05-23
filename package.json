@@ -35,11 +35,10 @@
     "@yikoyu/commitlint-config": "workspace:*",
     "@yikoyu/semantic-release-config": "workspace:^",
     "eslint": "^9.23.0",
-    "esno": "^4.8.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0",
     "rimraf": "^6.0.1",
-    "tsup": "^8.4.0",
+    "tsdown": "^0.12.2",
     "turbo": "^2.4.4",
     "typescript": "^5.8.2"
   }
