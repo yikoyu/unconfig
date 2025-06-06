@@ -70,8 +70,10 @@ jobs:
             }
 
             async function getBumps(files) {
-              const bumps = new Map();
+              const bumpList = [];
+
               for (const file of files) {
+                const bumps = new Map();
                 const { stdout: changes } = await exec.getExecOutput("git", [
                   "show",
                   file,
@@ -90,8 +92,14 @@ jobs:
 
                   bumps.set(name, version);
                 }
+
+                const [scope] = await getPackagesNames([file]);
+
+                if (bumps.size > 0) {
+                  bumpList.push({ scope, bumps });
+                }
               }
-              return bumps;
+              return bumpList;
             }
 
             const branch = await exec.getExecOutput("git branch --show-current");
@@ -116,14 +124,19 @@ jobs:
             const { stdout: shortHash } = await exec.getExecOutput(
               "git rev-parse --short HEAD"
             );
-            const fileName = `.changeset/renovate-${shortHash.trim()}.md`;
 
             const packageBumps = await getBumps(files);
-            if (!packageBumps.size) {
+            if (!packageBumps.length) {
               console.log('No dependencies changes to published packages, skipping');
               return;
             }
-            await createChangeset(fileName, packageBumps, packageNames);
-            await exec.exec("git", ["add", fileName]);
+            await Promise.all(packageBumps.map(({ scope, bumps }, index) => {
+              const fileName =
+                bumps.size === 1
+                  ? `.changeset/renovate-${shortHash.trim()}.md`
+                  : `.changeset/renovate-${shortHash.trim()}-${index + 1}.md`
+              return createChangeset(fileName, bumps, [scope]);
+            }));
+            await exec.exec("git", ["add", ".changeset/renovate-**.md"]);
             await exec.exec("git commit -C HEAD --amend --no-edit");
             await exec.exec("git push --force");
