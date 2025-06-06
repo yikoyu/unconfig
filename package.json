@@ -21,7 +21,7 @@
     "commit": "czg",
     "push": "pnpm publish --no-git-checks --registry https://registry.npmjs.org/ --access public",
     "version-packages": "pnpm changeset version",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "peerDependenciesMeta": {
     "typescript": {
