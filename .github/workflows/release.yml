@@ -21,7 +21,6 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [18]
 
     steps:
       - uses: actions/checkout@v4
@@ -31,8 +30,6 @@ jobs:
           fetch-depth: 0
 
       - uses: ./.github/actions/build-setup
-        with:
-          node-version: ${{ matrix.node }}
 
       - name: Build Config
         run: pnpm build:all

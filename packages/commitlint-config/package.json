@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.2.2",
   "private": false,
-  "packageManager": "pnpm@8.15.8",
+  "packageManager": "pnpm@10.11.1",
   "description": "yikoyu's commitlint config",
   "author": "yikoyu<2282373181@qq.com>",
   "license": "MIT",
