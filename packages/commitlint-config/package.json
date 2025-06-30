@@ -52,8 +52,8 @@
     "@commitlint/types": "^19.8.1"
   },
   "devDependencies": {
-    "@types/node": "^22.15.29",
-    "cz-git": "^1.11.1",
-    "czg": "^1.11.1"
+    "@types/node": "^22.15.34",
+    "cz-git": "^1.11.2",
+    "czg": "^1.11.2"
   }
 }
