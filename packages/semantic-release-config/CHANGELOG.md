@@ -1,5 +1,21 @@
 # @yikoyu/semantic-release-config
 
+## 0.1.5
+
+### Patch Changes
+
+- [#51](https://github.com/yikoyu/unconfig/pull/51) [`a7e3eeb`](https://github.com/yikoyu/unconfig/commit/a7e3eebec3982b40d9b9f4bc1f1a961f86fb4afe) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `@semantic-release/github` to `^11.0.5`.
+
+- [#46](https://github.com/yikoyu/unconfig/pull/46) [`21324ee`](https://github.com/yikoyu/unconfig/commit/21324ee1cb61a1343556b1bab6fdab612f267f95) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `@commitlint/cli` to `^19.8.1`.
+  Updated dependency `@commitlint/config-conventional` to `^19.8.1`.
+  Updated dependency `@commitlint/types` to `^19.8.1`.
+  Updated dependency `@semantic-release/github` to `^11.0.3`.
+
+- [`53f4a88`](https://github.com/yikoyu/unconfig/commit/53f4a889714fc71a94d6478376de0d4cb252ec79) Thanks [@yikoyu](https://github.com/yikoyu)! - Updated dependency `conventional-changelog-conventionalcommits` to `^9.1.0`.
+  Updated dependency `@semantic-release/release-notes-generator` to `^14.1.0`.
+  Updated dependency `@semantic-release/github` to `^11.0.6`.
+  Updated dependency `semantic-release` to `^24.2.9`.
+
 ## 0.1.4
 
 ### Patch Changes
