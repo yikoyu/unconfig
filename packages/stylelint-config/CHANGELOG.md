@@ -1,5 +1,18 @@
 # @yikoyu/stylelint-config
 
+## 0.1.3
+
+### Patch Changes
+
+- [`054c204`](https://github.com/yikoyu/unconfig/commit/054c204c745807d1363e0244e946ff3e9260c9e0) Thanks [@yikoyu](https://github.com/yikoyu)! - Updated dependency `stylelint-config-recess-order` to `^7.3.0`.
+  Updated dependency `stylelint-config-standard` to `^39.0.0`.
+  Updated dependency `stylelint-config-standard-scss` to `^16.0.0`.
+  Updated dependency `stylelint` to `^16.24.0`.
+
+- [#49](https://github.com/yikoyu/unconfig/pull/49) [`881dec2`](https://github.com/yikoyu/unconfig/commit/881dec2b927d4a3e19740df395f4ec28d7bceebc) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `postcss` to `^8.5.6`.
+
+- [#50](https://github.com/yikoyu/unconfig/pull/50) [`bfa11e9`](https://github.com/yikoyu/unconfig/commit/bfa11e9bbc216ca288c0ef59bbf111e145660e79) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `stylelint-config-recommended-vue` to `^1.6.1`.
+
 ## 0.1.2
 
 ### Patch Changes
