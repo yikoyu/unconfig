@@ -34,24 +34,25 @@ export function yikoyu(userConfig: Config = {}): Config {
         ],
         rules: {
           'scss/percent-placeholder-pattern': null,
+          'scss/no-global-function-names': null,
         },
       },
     ],
     rules: {
       'selector-not-notation': null,
       'import-notation': null,
-      'function-no-unknown': null,
+      'function-no-unknown': [true, { ignoreFunctions: ['v-bind', 'env'] }],
       'selector-class-pattern': null,
       'selector-pseudo-class-no-unknown': [
         true,
         {
-          ignorePseudoClasses: ['global', 'deep'],
+          ignorePseudoClasses: ['global', 'deep', 'export', 'root'],
         },
       ],
       'selector-pseudo-element-no-unknown': [
         true,
         {
-          ignorePseudoElements: ['v-deep'],
+          ignorePseudoElements: ['v-deep', 'v-global', 'v-slotted', '::v-deep', '::v-global'],
         },
       ],
       'at-rule-no-unknown': [
@@ -65,6 +66,7 @@ export function yikoyu(userConfig: Config = {}): Config {
             'screen',
             'function',
             'if',
+            'else',
             'each',
             'include',
             'mixin',
@@ -85,8 +87,29 @@ export function yikoyu(userConfig: Config = {}): Config {
         },
       ],
       'unit-no-unknown': [true, { ignoreUnits: ['rpx'] }],
+      'selector-type-no-unknown': [true, {
+        ignoreTypes: [
+          'page',
+          'view',
+          'text',
+          'image',
+          'scroll-view',
+          'button',
+        ],
+      }],
     },
-    ignoreFiles: ['node_modules/*', 'dist/*', '**/node_modules/*', '**/*.js', '**/*.jsx', '**/*.tsx', '**/*.ts', '**/*.d.ts'],
+    ignoreFiles: [
+      'node_modules/*',
+      'dist/*',
+      '**/node_modules/*',
+      '**/*.js',
+      '**/*.jsx',
+      '**/*.tsx',
+      '**/*.ts',
+      '**/*.d.ts',
+      '**/*.json',
+      '**/*.md',
+    ],
   }
 
   return Object.assign<Config, Config>(config, userConfig)

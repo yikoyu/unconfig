@@ -44,7 +44,7 @@
     "build": "tsdown --minify --clean --dts --config ../../tsdown.config.ts"
   },
   "peerDependencies": {
-    "stylelint": "^16.0.0"
+    "stylelint": "^16.23.1"
   },
   "dependencies": {
     "postcss": "^8.5.6",
