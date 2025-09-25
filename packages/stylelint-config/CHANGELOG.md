@@ -1,5 +1,11 @@
 # @yikoyu/stylelint-config
 
+## 0.1.4
+
+### Patch Changes
+
+- [`f8092f2`](https://github.com/yikoyu/unconfig/commit/f8092f27f75d799bf5cd073041059ffd5eda42aa) Thanks [@yikoyu](https://github.com/yikoyu)! - adjust rules, ignore files, update peer dep version
+
 ## 0.1.3
 
 ### Patch Changes
