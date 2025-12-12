@@ -20,7 +20,7 @@
     "clean:all": "rimraf -g **/{.turbo,dist,node_modules} & pnpm install",
     "commit": "czg",
     "version-packages": "pnpm changeset version",
-    "prepare": "husky"
+    "prepare": "simple-git-hooks"
   },
   "peerDependenciesMeta": {
     "typescript": {
@@ -35,11 +35,20 @@
     "@yikoyu/commitlint-config": "workspace:*",
     "@yikoyu/semantic-release-config": "workspace:^",
     "eslint": "^9.39.1",
-    "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "rimraf": "^6.1.2",
+    "simple-git-hooks": "^2.13.1",
     "tsdown": "^0.17.3",
     "turbo": "^2.6.3",
     "typescript": "^5.9.3"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged",
+    "commit-msg": "pnpm commitlint --edit $1"
+  },
+  "lint-staged": {
+    "*": [
+      "eslint --fix"
+    ]
   }
 }
