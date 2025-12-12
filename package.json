@@ -3,13 +3,13 @@
   "type": "module",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@10.11.1",
+  "packageManager": "pnpm@10.25.0",
   "description": "yikoyu's config",
   "author": "yikoyu<2282373181@qq.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yikoyu/unconfig"
+    "url": "git+https://github.com/yikoyu/unconfig.git"
   },
   "scripts": {
     "dev": "turbo dev",
@@ -19,7 +19,6 @@
     "clean:cache": "rimraf -g **/{.turbo,dist}",
     "clean:all": "rimraf -g **/{.turbo,dist,node_modules} & pnpm install",
     "commit": "czg",
-    "push": "pnpm publish --no-git-checks --registry https://registry.npmjs.org/ --access public",
     "version-packages": "pnpm changeset version",
     "prepare": "husky"
   },
@@ -39,7 +38,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "rimraf": "^6.1.2",
-    "tsdown": "^0.16.8",
+    "tsdown": "^0.17.3",
     "turbo": "^2.6.1",
     "typescript": "^5.9.3"
   }
