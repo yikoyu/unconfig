@@ -11,6 +11,10 @@
     "type": "git",
     "url": "git+https://github.com/yikoyu/unconfig.git"
   },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=10"
+  },
   "scripts": {
     "dev": "turbo dev",
     "build:all": "turbo build",

@@ -12,24 +12,23 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   release:
-    runs-on: ${{ matrix.os }}
+    runs-on: [ubuntu-latest]
 
     permissions:
-      contents: read
-      id-token: write
-
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Setup JS
+        uses: yikoyu/workflows/setup-js@main
         with:
+          fetch-all: 'true'
           persist-credentials: false
-          # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
-          fetch-depth: 0
 
-      - uses: ./.github/actions/build-setup
+      - name: Update npm
+        run: npm install npm@11.6.1 -g
 
       - name: Build Config
         run: pnpm build:all
@@ -43,6 +42,8 @@ jobs:
           version: pnpm changeset version
           publish: pnpm changeset publish
         env:
-          NPM_CONFIG_PROVENANCE: true
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_REGISTRY: https://registry.npmjs.org/
+          NPM_CONFIG_PROVENANCE: true
+          SKIP_SIMPLE_GIT_HOOKS: 1
+          HUSKY: 0
