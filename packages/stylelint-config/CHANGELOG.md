@@ -1,5 +1,14 @@
 # @yikoyu/stylelint-config
 
+## 0.1.5
+
+### Patch Changes
+
+- [#56](https://github.com/yikoyu/unconfig/pull/56) [`76a17ac`](https://github.com/yikoyu/unconfig/commit/76a17acc91f7eb137d6c4ce43a76f72ad767c9af) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `stylelint-config-recess-order` to `^7.4.0`.
+  Updated dependency `stylelint-config-standard` to `^39.0.1`.
+
+- [`503b827`](https://github.com/yikoyu/unconfig/commit/503b82731b53d2afa807e6bb2adf8519844b16a8) Thanks [@yikoyu](https://github.com/yikoyu)! - Enhance SCSS and uni-app support
+
 ## 0.1.4
 
 ### Patch Changes

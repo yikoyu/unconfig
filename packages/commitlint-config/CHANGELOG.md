@@ -1,5 +1,13 @@
 # @yikoyu/commitlint-config
 
+## 0.2.4
+
+### Patch Changes
+
+- [#55](https://github.com/yikoyu/unconfig/pull/55) [`8c11a71`](https://github.com/yikoyu/unconfig/commit/8c11a71c890aba22d2f69e129951c8377e23f741) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `@commitlint/cli` to `^20.1.0`.
+  Updated dependency `@commitlint/config-conventional` to `^20.0.0`.
+  Updated dependency `@commitlint/types` to `^20.0.0`.
+
 ## 0.2.3
 
 ### Patch Changes
