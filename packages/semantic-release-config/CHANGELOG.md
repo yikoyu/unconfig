@@ -1,5 +1,12 @@
 # @yikoyu/semantic-release-config
 
+## 0.1.6
+
+### Patch Changes
+
+- [`e463c3e`](https://github.com/yikoyu/unconfig/commit/e463c3ea1bf0a624d92cfbcb68445ff59de52528) Thanks [@yikoyu](https://github.com/yikoyu)! - Updated dependency `@semantic-release/github` to `^12.0.2`.
+  Updated dependency `@semantic-release/npm` to `^13.1.3`.
+
 ## 0.1.5
 
 ### Patch Changes
