@@ -52,7 +52,7 @@
     "postcss-html": "^1.8.1",
     "postcss-less": "^6.0.0",
     "postcss-scss": "^4.0.9",
-    "stylelint-config-recess-order": "^7.4.0",
+    "stylelint-config-recess-order": "^7.6.0",
     "stylelint-config-recommended-vue": "^1.6.1",
     "stylelint-config-standard": "^39.0.1",
     "stylelint-config-standard-scss": "^16.0.0"
