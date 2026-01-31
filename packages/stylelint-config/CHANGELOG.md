@@ -1,5 +1,12 @@
 # @yikoyu/stylelint-config
 
+## 0.1.6
+
+### Patch Changes
+
+- [#62](https://github.com/yikoyu/unconfig/pull/62) [`4002d43`](https://github.com/yikoyu/unconfig/commit/4002d437bd311caddac2bea57a2ec7701c9476d8) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `stylelint-config-recess-order` to `^7.6.0`.
+  `.
+
 ## 0.1.5
 
 ### Patch Changes
