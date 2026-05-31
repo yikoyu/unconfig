@@ -48,7 +48,7 @@
     "stylelint": "^16.23.1"
   },
   "dependencies": {
-    "postcss": "^8.5.13",
+    "postcss": "^8.5.15",
     "postcss-html": "^1.8.1",
     "postcss-less": "^6.0.0",
     "postcss-scss": "^4.0.9",
