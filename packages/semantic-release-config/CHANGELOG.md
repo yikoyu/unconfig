@@ -1,5 +1,14 @@
 # @yikoyu/semantic-release-config
 
+## 0.1.7
+
+### Patch Changes
+
+- [#67](https://github.com/yikoyu/unconfig/pull/67) [`76869b8`](https://github.com/yikoyu/unconfig/commit/76869b8e3ec0b31f7a15ff141893f3da12c93cae) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `@semantic-release/github` to `^12.0.8`.
+  Updated dependency `@semantic-release/npm` to `^13.1.5`.
+  Updated dependency `@semantic-release/release-notes-generator` to `^14.1.1`.
+  Updated dependency `conventional-changelog-conventionalcommits` to `^9.3.1`.
+
 ## 0.1.6
 
 ### Patch Changes
