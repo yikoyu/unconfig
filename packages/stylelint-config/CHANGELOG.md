@@ -1,5 +1,18 @@
 # @yikoyu/stylelint-config
 
+## 0.1.6
+
+### Patch Changes
+
+- [#67](https://github.com/yikoyu/unconfig/pull/67) [`76869b8`](https://github.com/yikoyu/unconfig/commit/76869b8e3ec0b31f7a15ff141893f3da12c93cae) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `stylelint-config-recess-order` to `^7.7.0`.
+
+- [#65](https://github.com/yikoyu/unconfig/pull/65) [`b34a76d`](https://github.com/yikoyu/unconfig/commit/b34a76da99bc3128c14331a5223605e70c9c1c60) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `postcss` to `^8.5.13`.
+
+- [#62](https://github.com/yikoyu/unconfig/pull/62) [`4002d43`](https://github.com/yikoyu/unconfig/commit/4002d437bd311caddac2bea57a2ec7701c9476d8) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `stylelint-config-recess-order` to `^7.6.0`.
+  `.
+
+- [#66](https://github.com/yikoyu/unconfig/pull/66) [`c7a7ba7`](https://github.com/yikoyu/unconfig/commit/c7a7ba79ad89f35f91dfa5dc74146ef933571819) Thanks [@renovate](https://github.com/apps/renovate)! - Updated dependency `postcss` to `^8.5.15`.
+
 ## 0.1.5
 
 ### Patch Changes
