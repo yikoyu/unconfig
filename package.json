@@ -18,6 +18,7 @@
   "scripts": {
     "dev": "turbo dev",
     "build:all": "turbo build",
+    "test:stylelint": "pnpm --filter @yikoyu/stylelint-config build && pnpm --filter @yikoyu/stylelint-config test",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "clean:cache": "rimraf -g **/{.turbo,dist}",

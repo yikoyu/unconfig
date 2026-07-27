@@ -42,7 +42,9 @@
   ],
   "scripts": {
     "dev": "tsdown --watch",
-    "build": "tsdown --minify"
+    "build": "tsdown --minify",
+    "test": "vitest run",
+    "lint:fixtures": "stylelint --config test/stylelint.config.js \"test/fixtures/**/*.{css,scss,less,vue,html}\""
   },
   "peerDependencies": {
     "stylelint": "^16.23.1"
@@ -59,6 +61,7 @@
   },
   "devDependencies": {
     "@types/postcss-less": "^4.0.7",
-    "stylelint": "^16.26.1"
+    "stylelint": "^16.26.1",
+    "vitest": "^4.1.10"
   }
 }
