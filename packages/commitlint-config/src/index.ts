@@ -9,7 +9,7 @@ const gitStatus = execSync('git status --porcelain || true')
   .split('\n')
 
 const scopeComplete = gitStatus
-  .find(r => ~r.indexOf('M  packages'))
+  .find(r => r.includes('M  packages'))
   ?.replace(/\//g, '%%')
   ?.match(/packages%%((\w|-)*)/)?.[1]
 
