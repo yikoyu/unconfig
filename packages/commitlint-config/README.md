@@ -52,10 +52,11 @@ device(s):
      pnpm install --save-dev @yikoyu/commitlint-config cz-git czg
     ```
 
-2. **If using [pnpm], please add configuration to the `.npmrc` file.**
+2. **If using [pnpm], please add configuration to the `pnpm-workspace.yaml` file.**
 
-    ```
-    public-hoist-pattern[]=@commitlint/*
+    ```yaml
+    hoistPattern:
+      - '@commitlint/*'
     ```
 
 3. **Create a ![commitlint icon] [commitlint configuration file] - `commitlint.config.(js|cjs|.mjs)`**.

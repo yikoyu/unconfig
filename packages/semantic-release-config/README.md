@@ -52,10 +52,11 @@ device(s):
      pnpm install --save-dev semantic-release @yikoyu/semantic-release-config conventional-changelog-conventionalcommits
     ```
 
-2. **If using [pnpm], please add configuration to the `.npmrc` file.**
+2. **If using [pnpm], please add configuration to the `pnpm-workspace.yaml` file.**
 
-    ```
-    public-hoist-pattern[]=@semantic-release/*
+    ```yaml
+    hoistPattern:
+      - '@semantic-release/*'
     ```
 
 3. **Create a ![semantic-release icon] [semantic-release configuration file] - `release.config.(js|cjs|.mjs)`**.

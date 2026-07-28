@@ -1,7 +1,16 @@
 packages:
   - packages/*
 
-onlyBuiltDependencies:
-  - esbuild
-  - simple-git-hooks
-  - unrs-resolver
+allowBuilds:
+  simple-git-hooks: true
+
+strictPeerDependencies: false
+minimumReleaseAge: 120
+publicHoistPattern:
+  - '*types*'
+  - '*eslint*'
+  - '@commitlint/*'
+  - cz-git
+  - czg
+  - '*semantic-release*'
+  - tslib

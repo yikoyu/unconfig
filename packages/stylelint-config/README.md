@@ -52,11 +52,12 @@ device(s):
      pnpm install --save-dev stylelint @yikoyu/stylelint-config
     ```
 
-2. **If using [pnpm], please add configuration to the `.npmrc` file.**
+2. **If using [pnpm], please add configuration to the `pnpm-workspace.yaml` file.**
 
-    ```
-    public-hoist-pattern[]=*stylelint*
-    public-hoist-pattern[]=postcss*
+    ```yaml
+    hoistPattern:
+      - '*stylelint*'
+      - 'postcss*'
     ```
 
 3. **Create a ![stylelint icon] [stylelint configuration file] - `stylelint.config.(js|cjs|.mjs)`**.

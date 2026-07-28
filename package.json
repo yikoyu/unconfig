@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@10.25.0",
+  "packageManager": "pnpm@11.17.0",
   "description": "yikoyu's config",
   "author": "yikoyu<2282373181@qq.com>",
   "license": "MIT",
