@@ -1,4 +1,4 @@
-import type { PluginSpec } from 'semantic-release'
+import type { PluginSpec } from './types'
 
 /**
  * Merge two object configurations based on the value of ovr.

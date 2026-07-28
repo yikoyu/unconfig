@@ -1,4 +1,35 @@
-import type { Options } from 'semantic-release'
+/**
+ * 这里本应从 `semantic-release` 直接导入类型，但 tsdown 底层 rolldown
+ * 无法识别 `declare module "semantic-release" {}` 内部的 export，只能手动声明。
+ *
+ * These types should be imported from `semantic-release` directly, but rolldown
+ * (used by tsdown) cannot resolve exports inside `declare module "xxx" {}` blocks.
+ *
+ * @see https://github.com/sxzz/rolldown-plugin-dts/issues/134
+ * @since 2026-07-28
+ */
+export type BranchSpec = string | BranchObject
+
+export interface BranchObject {
+  name: string
+  channel?: string | false
+  range?: string
+  prerelease?: string | boolean
+}
+
+export type PluginSpec<T = any> = string | [string, T]
+
+export interface Options {
+  extends?: ReadonlyArray<string> | string
+  branches?: ReadonlyArray<BranchSpec> | BranchSpec
+  repositoryUrl?: string
+  tagFormat?: string
+  plugins?: ReadonlyArray<PluginSpec>
+  dryRun?: boolean
+  ci?: boolean
+  noCi?: true
+  [name: string]: any
+}
 
 type CommitAnalyzerPreset = 'angular'
   | 'atom'

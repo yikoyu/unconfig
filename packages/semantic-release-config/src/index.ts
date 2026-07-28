@@ -1,6 +1,4 @@
-import type { Options, PluginSpec } from 'semantic-release'
-
-import type { OptionsConfig } from './types'
+import type { Options, OptionsConfig, PluginSpec } from './types'
 import {
   configChangelog,
   configCommitAnalyzer,
