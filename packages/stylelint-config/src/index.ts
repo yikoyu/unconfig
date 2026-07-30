@@ -1,41 +1,152 @@
 import type { Config } from 'stylelint'
 
+/** Vue 文件中预处理器语言 / Preprocessor language for Vue files */
+export type VueStyle = 'scss' | 'less' | 'css'
+
+/** yikoyu 配置选项 / yikoyu config options */
+export interface YikoyuStylelintConfig extends Config {
+  /** Vue 文件中预处理器语言，默认 'css' / Preprocessor language for Vue files, default 'css' */
+  vueStyle?: VueStyle
+  /** 启用 UnoCSS 兼容（允许 @apply、@screen、@unocss 等），默认 false / Enable UnoCSS compatibility, default false */
+  unocss?: boolean
+  /** 启用 Tailwind CSS 兼容（允许 @apply、@tailwind、@source 等），默认 false / Enable Tailwind CSS compatibility, default false */
+  tailwind?: boolean
+  /** 启用 UniApp 小程序适配（允许 rpx 单位和小程序标签），默认 false / Enable UniApp mini-program support, default false */
+  uniapp?: boolean
+}
+
+/** Tailwind CSS v4 @rule 白名单 / Tailwind CSS v4 @rule allowlist */
+const tailwindAtRules = [
+  'tailwind',
+  'layer',
+  'config',
+  'apply',
+  'variants',
+  'responsive',
+  'screen',
+  'theme',
+  'source',
+  'custom-variant',
+  'plugin',
+  'reference',
+]
+
+/** UnoCSS @rule 白名单 / UnoCSS @rule allowlist */
+const unocssAtRules = [
+  'unocss',
+  'apply',
+  'screen',
+  'variants',
+  'responsive',
+]
+
+/** SCSS 规则微调 (配合 @antfu 风格) / SCSS rule tweaks (compatible with @antfu style) */
+const scssRules = {
+  'scss/percent-placeholder-pattern': null,
+  'scss/no-global-function-names': null,
+  'scss/load-partial-extension': null,
+  'scss/double-slash-comment-empty-line-before': null,
+  'scss/double-slash-comment-whitespace-inside': null,
+} as const
+
 /**
  * Construct an stylelint config items.
  *
- * @param {Config} [userConfig] - User-provided configuration to override or extend the default configuration.
+ * @param {YikoyuStylelintConfig} [userConfig] - User-provided configuration to override or extend the default configuration.
  * @returns {Config} - Merged configuration object.
  */
-export function yikoyu(userConfig: Config = {}): Config {
+export function yikoyu(userConfig: YikoyuStylelintConfig = {}): Config {
+  const {
+    vueStyle = 'css',
+    unocss = false,
+    tailwind = false,
+    uniapp = false,
+    ...rest
+  } = userConfig
+
+  // 合并 @rule 白名单
+  const ignoreAtRules = [
+    ...(tailwind ? tailwindAtRules : []),
+    ...(unocss ? unocssAtRules : []),
+  ]
+
+  // SCSS 规则（含 @rule 白名单，同时禁用基础 at-rule-no-unknown）
+  const scssRulesWithAtRule = {
+    ...scssRules,
+    'at-rule-no-unknown': null,
+    ...(ignoreAtRules.length > 0
+      ? { 'scss/at-rule-no-unknown': [true, { ignoreAtRules }] }
+      : {}),
+  }
+
+  // 根据 vueStyle 动态构建 Vue override 的 extends
+  const vueExtends: string[] = [
+    'stylelint-config-recommended-vue',
+  ]
+  if (vueStyle === 'scss') {
+    vueExtends.push(
+      'stylelint-config-standard-scss',
+      'stylelint-config-recommended-vue/scss',
+    )
+  }
+  else if (vueStyle === 'less') {
+    vueExtends.push(
+      'stylelint-config-standard-less',
+    )
+  }
+
   const config: Config = {
     extends: [
       'stylelint-config-standard',
       'stylelint-config-recess-order',
     ],
     overrides: [
+      // --- Vue 文件 (含 CSS/SCSS/Less 多 style 块) ---
       {
-        files: ['**/*.(css|html|vue)'],
+        files: ['*.vue', '**/*.vue'],
         customSyntax: 'postcss-html',
-        extends: [
-          'stylelint-config-recommended-vue',
-          'stylelint-config-standard-scss',
-          'stylelint-config-recommended-vue/scss',
-        ],
+        extends: vueExtends,
+        rules: {
+          ...(vueStyle === 'scss' ? scssRulesWithAtRule : {}),
+          ...(vueStyle === 'less' && ignoreAtRules.length > 0
+            ? { 'at-rule-no-unknown': [true, { ignoreAtRules }] }
+            : {}),
+        },
       },
-      {
-        files: ['*.less', '**/*.less'],
-        customSyntax: 'postcss-less',
-      },
+      // --- 独立 SCSS 文件 ---
       {
         files: ['*.scss', '**/*.scss'],
         customSyntax: 'postcss-scss',
         extends: [
           'stylelint-config-standard-scss',
-          'stylelint-config-recommended-vue/scss',
         ],
+        rules: scssRulesWithAtRule,
+      },
+      // --- 独立 Less 文件 ---
+      {
+        files: ['*.less', '**/*.less'],
+        customSyntax: 'postcss-less',
+        extends: [
+          'stylelint-config-standard-less',
+        ],
+        rules: {
+          'at-rule-no-unknown': ignoreAtRules.length > 0
+            ? [true, { ignoreAtRules }]
+            : null,
+        },
+      },
+      // --- HTML 文件 (内嵌 <style>) ---
+      {
+        files: ['*.html', '**/*.html'],
+        customSyntax: 'postcss-html',
       },
     ],
     rules: {
+      // --- @rule 白名单 (UnoCSS / Tailwind) ---
+      ...(ignoreAtRules.length > 0
+        ? { 'at-rule-no-unknown': [true, { ignoreAtRules }] }
+        : {}),
+
       // --- 基础规则优化 ---
       // 为 :not() 伪类选择器指定简单或复杂的表示法
       'selector-not-notation': null,
@@ -67,46 +178,45 @@ export function yikoyu(userConfig: Config = {}): Config {
 
       // --- UniApp & 小程序适配 ---
       // 允许 rpx 单位
-      'unit-no-unknown': [true, {
-        ignoreUnits: ['rpx'],
-      }],
+      'unit-no-unknown': uniapp
+        ? [true, { ignoreUnits: ['rpx'] }]
+        : true,
       // 允许小程序特有标签
-      'selector-type-no-unknown': [true, {
-        ignoreTypes: [
-          'page',
-          'view',
-          'text',
-          'image',
-          'scroll-view',
-          'swiper',
-          'swiper-item',
-          'navigator',
-          'button',
-          'radio',
-          'checkbox',
-          'label',
-          'form',
-          'picker',
-          'picker-view',
-        ],
-      }],
+      'selector-type-no-unknown': uniapp
+        ? [true, {
+            ignoreTypes: [
+              'page',
+              'view',
+              'text',
+              'image',
+              'scroll-view',
+              'swiper',
+              'swiper-item',
+              'navigator',
+              'button',
+              'radio',
+              'checkbox',
+              'label',
+              'form',
+              'picker',
+              'picker-view',
+              'editor',
+              'live-pusher',
+              'map',
+              'movable-view',
+              'cover-view',
+              'rich-text',
+              'icon',
+              'progress',
+              'video',
+              'camera',
+            ],
+          }]
+        : true,
 
-      // --- UnoCSS&tailwindcss 兼容 (关键) ---
-      'scss/at-rule-no-unknown': [true, {
-        ignoreAtRules: [
-          'tailwind', // tailwindcss
-          'layer', // tailwindcss
-          'config', // tailwindcss
-          'apply',
-          'variants',
-          'responsive',
-          'screen',
-          'unocss',
-          'theme',
-        ],
-      }],
+      // --- CSS 函数兼容 ---
       'function-no-unknown': [true, {
-        ignoreFunctions: ['theme', 'v-bind', 'env', 'constant'],
+        ignoreFunctions: ['v-bind', 'env', 'constant'],
       }],
 
       // --- Vue3 深度选择器适配 ---
@@ -117,36 +227,19 @@ export function yikoyu(userConfig: Config = {}): Config {
         ignorePseudoClasses: ['global', 'deep', 'export', 'root'],
       }],
 
-      // --- 声明值校验优化 (针对 v-bind 和 rpx) ---
+      // --- 声明值校验优化 ---
       'declaration-property-value-no-unknown': [true, {
         ignoreProperties: {
           '/.+/': [
             /v-bind\(.+\)/,
-            /(\d+(\.\d+)?rpx)/,
+            ...(uniapp ? [/(\d+(\.\d+)?rpx)/] : []),
           ],
         },
       }],
-
-      // --- SCSS 规则微调 (配合 @antfu 风格) ---
-      // 为 -placeholders 指定一个模式（%）
-      'scss/percent-placeholder-pattern': null,
-      // 禁止使用全局函数名，因为这些全局函数现已被归入 Sass 内置模块中
-      'scss/no-global-function-names': null,
-      // 要求或禁止在 @import、@use、@forward 以及 meta.load-css 命令中书写文件扩展名
-      'scss/load-partial-extension': null,
-      // 要求或禁止在双斜杠注释（//）前保留空行
-      'scss/double-slash-comment-empty-line-before': null,
-      // 要求或禁止在双斜杠注释（//）的双斜杠后保留空白字符
-      'scss/double-slash-comment-whitespace-inside': null,
-      // 允许不写下划线和后缀
-      'scss/at-import-partial-extension': null,
-      // 禁用标准 CSS 中不支持 SCSS 函数的报错
-      'at-rule-no-deprecated': null,
     },
     ignoreFiles: [
-      'node_modules/*',
-      'dist/*',
-      '**/node_modules/*',
+      '**/node_modules/**',
+      '**/dist/**',
       '**/*.js',
       '**/*.jsx',
       '**/*.tsx',
@@ -157,7 +250,7 @@ export function yikoyu(userConfig: Config = {}): Config {
     ],
   }
 
-  return Object.assign<Config, Config>(config, userConfig)
+  return Object.assign<Config, Config>(config, rest)
 }
 
 export default yikoyu

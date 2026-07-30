@@ -1,0 +1,27 @@
+// 测试通过：SCSS 基础语法（变量、嵌套、@mixin、@include、@extend、placeholders）
+$primary: #333;
+$font-size: 16px;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%button-base {
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.test {
+  @include flex-center;
+
+  font-size: $font-size;
+  color: $primary;
+
+  &-modifier {
+    @extend %button-base;
+
+    color: $primary;
+  }
+}

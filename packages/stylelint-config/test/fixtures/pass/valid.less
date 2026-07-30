@@ -1,4 +1,15 @@
+// 测试通过：Less 基础语法（变量、mixin 调用、嵌套）
+.mixin() {
+  padding: 8px 16px;
+}
+
+@primary: #333;
+
 .test {
-  font-size: 16px;
-  color: #333;
+  color: @primary;
+  .mixin();
+
+  &-modifier {
+    font-size: 14px;
+  }
 }

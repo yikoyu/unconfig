@@ -1,4 +1,8 @@
-/* 测试通过：CSS 基础语法（CSS 变量、选择器、@keyframes） */
+<template>
+  <div class="test">Hello</div>
+</template>
+
+<style>
 :root {
   --primary: #333;
 }
@@ -24,3 +28,4 @@
     opacity: 1;
   }
 }
+</style>

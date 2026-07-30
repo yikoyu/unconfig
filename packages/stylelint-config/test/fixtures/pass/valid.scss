@@ -1,6 +1,25 @@
+// 测试通过：SCSS 基础语法（变量、嵌套、@mixin、@include）
 $primary: #333;
+$font-size: 16px;
 
 .test {
-  font-size: 16px;
+  font-size: $font-size;
   color: $primary;
+
+  &-modifier {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 4px;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  @include flex-center;
 }
