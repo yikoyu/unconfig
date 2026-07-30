@@ -1,5 +1,11 @@
 # @yikoyu/stylelint-config
 
+## 0.2.0
+
+### Minor Changes
+
+- [`8d7a8e7`](https://github.com/yikoyu/unconfig/commit/8d7a8e76e888bea964b2021944d5beeddcaac06b) Thanks [@yikoyu](https://github.com/yikoyu)! - add vueStyle/unocss/tailwind/uniapp options
+
 ## 0.1.6
 
 ### Patch Changes
